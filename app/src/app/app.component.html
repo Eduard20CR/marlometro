@@ -23,6 +23,14 @@
         (change)="hasWon.set(false)" />
     </div>
 
+
+
+    <div class="mb-5 font-bold">
+      <label class="block mb-2">Establecer Volumen Máximo Manualmente:</label>
+      <input class="w-full  border-1 rounded p-2" type="number" [(ngModel)]="maxVolume"
+        (change)="handleSetMaxVolume(maxVolume())" />
+    </div>
+
     <div>
       <label class="mb-5 font-bold">Stats</label>
       <p>Volumen actual: {{currentVolume().toFixed(3)}}</p>

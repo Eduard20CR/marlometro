@@ -111,4 +111,8 @@ export class AppComponent implements OnInit, OnDestroy {
   public handleSetWonToFalse(): void {
     this.hasWon.set(false);
   }
+
+  handleSetMaxVolume(value: number): void {
+    this.maxVolume.set(value);
+  }
 }
