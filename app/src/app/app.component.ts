@@ -92,8 +92,12 @@ export class AppComponent implements OnInit, OnDestroy {
 
   showConfetti(): void {
     if (this.hasWon()) return;
+
     const jsConfetti = new JSConfetti();
+
     jsConfetti.addConfetti();
+    jsConfetti.addConfetti({ emojis: ['🌈', '⚡️', ' 💥', '✨', '💫', '🌸'], })
+    jsConfetti.addConfetti({ confettiColors: ['#ff0a54 ', '#ff477e', '#ff7096', '#ff85a1', '#fbb1bd', '#f9bec7',], })
   }
 
   toggleOptions(): void {
@@ -102,5 +106,9 @@ export class AppComponent implements OnInit, OnDestroy {
 
   public getBarHeight(): string {
     return Math.min((this.currentVolume() / (this.maxVolume() * this.difficulty())) * 100, 100) + '%';
+  }
+
+  public handleSetWonToFalse(): void {
+    this.hasWon.set(false);
   }
 }
